@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div id="apa">
+            <div id="zombie"></div>
+            <div id="zombie2"></div>
+        </div>
+        <div id="soldado"></div>
+        
+    </section>
+    <script>
+    let soldado = document.querySelector("#soldado");
+    let zombie = document.querySelector("#zombie");
+    let apa = document.querySelector("#apa");
+    let valor =190
+    let uno =false;
+    let repeticiones = 0;
+    let animacionSoldado=0
+    function animacion(soldado) {
+        soldado.style.background="url(./soldados/pix/Soldier_1/Walk.png)";
+        setTimeout(() => {
+            soldado.style.backgroundPosition = "-128px 0";
+            setTimeout(() => {
+                soldado.style.backgroundPosition = "-256px 0";
+                setTimeout(() => {
+                    soldado.style.backgroundPosition = "-384px 0";
+                    setTimeout(() => {
+                        soldado.style.backgroundPosition = "-512px 0";
+                        setTimeout(() => {
+                            soldado.style.backgroundPosition = "-640px 0";
+                            setTimeout(() => {
+                                soldado.style.backgroundPosition = "-768px 0";
+                                setTimeout(() => {
+                                    soldado.style.backgroundPosition = "-896px 0";
+                                    // Aumentar el contador de repeticiones
+                                    animacionSoldado++;
+                                    // Repetir la animación hasta que lleguemos a 20
+                                    if (animacionSoldado < 19) {
+                                        console.log(animacionSoldado);
+                                        animacion(soldado);
+                                    }else{
+                                        soldado.style.background="url(./soldados/pix/Soldier_1/Idle.png)"
+                                        setTimeout(()=>{
+                                            soldado.style.background="url(./soldados/pix/Soldier_1/Shot_2.png)"
+                                            setTimeout(() => {
+                                                repeticiones=0
+                                                disparar(soldado)
+                                            }, 1000);     
+                                        },200)
+                                    }
+                                }, 100);
+                            }, 100);
+                        }, 100);
+                    }, 100);
+                }, 100);
+            }, 100);
+        }, 100);
+    }
+    function disparar(soldado) {
+        setTimeout(() => {
+            soldado.style.backgroundPosition = "-128px 0";
+            setTimeout(() => {
+                soldado.style.backgroundPosition = "-256px 0";
+                setTimeout(() => {
+                    soldado.style.backgroundPosition = "-384px 0";
+                    setTimeout(() => {
+                        soldado.style.backgroundPosition = "-512px 0";
+                        setTimeout(() => {
+                            soldado.style.backgroundPosition = "-512px 0";
+                                    repeticiones++;
+                                    // Repetir la animación hasta que lleguemos a 20
+                                    if (repeticiones < 15) {
+                                        disparar(soldado);
+                                    }else{
+                                        soldado.style.background="url(./soldados/pix/Soldier_1/Idle.png);"
+                                        soldado.style.backgroundPosition = "0px 0";
+                                    }
+                        }, 50);
+                    }, 50);
+                }, 50);
+            }, 50);
+        }, 50);
+    }
+    function zombieComer(zombie) {
+        setTimeout(() => {
+            zombie.style.backgroundPosition = "-120px 0";
+            setTimeout(() => {
+                zombie.style.backgroundPosition = "-216px 0";
+                setTimeout(() => {
+                    zombie.style.backgroundPosition = "-312px 0";
+                    setTimeout(() => {
+                        zombie.style.backgroundPosition = "-408px 0";
+                        setTimeout(() => {
+                            zombie.style.backgroundPosition = "-504px 0";
+                            setTimeout(() => {
+                            zombie.style.backgroundPosition = "-600px 0";
+                            setTimeout(() => {
+                                zombie.style.backgroundPosition = "-696px 0";
+                                setTimeout(() => {
+                                    zombie.style.backgroundPosition = "-792px 0";
+                                    setTimeout(() => {
+                                        zombie.style.backgroundPosition = "-696px 0";
+                                    setTimeout(() => {
+                                            repeticiones++;
+                                            console.log(repeticiones);
+                                            // Repetir la animación hasta que lleguemos a 20
+                                            if (repeticiones < 2) {
+                                                zombieComer(zombie); 
+                                            }else{
+                                                zombie.style.backgroundPosition = "-600px 0";
+                                                setTimeout(() => {  
+                                                    inicioCorrer(zombie)
+                                                }, 300);
+                                            }
+                                        }, 200);
+                                    }, 200);
+                                }, 200);
+                            }, 200);
+                        }, 200);
+                        }, 200);
+                    }, 200);
+                }, 200);
+            }, 200);
+        }, 200);
+    }
+    
+    function inicioCorrer(zombie) {
+        zombie.style.background="url(./zombie/pix/WildZombie/Hurt.png)"
+        zombie.style.backgroundPosition = "-120px 0";
+        setTimeout(() => {
+            zombie.style.backgroundPosition = "-120px 0";
+            setTimeout(() => {
+                zombie.style.backgroundPosition = "-216px 0";
+                setTimeout(() => {
+                    zombie.style.backgroundPosition = "-312px 0";
+                    setTimeout(() => {
+                        zombie.style.backgroundPosition = "-408px 0";
+                        setTimeout(()=>{
+                            zombie.style.background="url(./zombie/pix/WildZombie/Walk.png)"
+                            zombie.style.backgroundPosition = "-120px 0";
+                            setTimeout(() => {  
+                                andar(zombie)
+                            }, 300);
+                        },200)
+                    }, 200);
+                }, 200);
+            }, 200);
+        }, 200);
+    }
+    function andar(zombie) {
+        setTimeout(() => {
+            zombie.style.backgroundPosition = "-216px 0";
+            zombie.style.left="110px";
+            setTimeout(() => {
+                zombie.style.backgroundPosition = "-312px 0";
+                zombie.style.left="120px";
+                setTimeout(() => {
+                    zombie.style.backgroundPosition = "-408px 0";
+                    zombie.style.left="135px";
+                    setTimeout(() => {
+                        zombie.style.backgroundPosition = "-504px 0";
+                        zombie.style.left="140px";
+                        setTimeout(() => {
+                            zombie.style.backgroundPosition = "-600px 0";
+                            zombie.style.left="165px";
+                            setTimeout(()=>{
+                                zombie.style.left="170px";
+                                zombie.style.backgroundPosition = "-120px 0";
+                                zombie.style.background="url(./zombie/pix/WildZombie/Run.png)"
+                                setTimeout(() => {  
+                                    repeticiones=0
+                                    correr(zombie)
+                                }, 300);
+                            },200)
+                        }, 200);
+                    }, 200);
+                }, 200);
+            }, 200);
+        }, 200);
+    }
+    function correr(zombie) {
+        if (!uno) {
+            zombie.style.backgroundPosition = "-120px 0";
+            zombie.style.left=valor+"px";
+            uno=true;
+        }
+        
+        console.log(valor);
+
+        setTimeout(() => {
+            zombie.style.backgroundPosition = "-216px 0";
+            zombie.style.left=valor+"px";
+            valor+=15
+            setTimeout(() => {
+                zombie.style.backgroundPosition = "-312px 0";
+                zombie.style.left=valor+"px";
+                valor+=15
+                setTimeout(() => {
+                    zombie.style.backgroundPosition = "-408px 0";
+                    zombie.style.left=valor+"px";
+                    valor+=15
+                    setTimeout(() => {
+                        zombie.style.backgroundPosition = "-504px 0";
+                        zombie.style.left=valor+"px";
+                        valor+=15
+                        setTimeout(() => {
+                            zombie.style.backgroundPosition = "-600px 0";
+                            zombie.style.left=valor+"px";
+                            valor+=15
+                            setTimeout(() => {
+                                zombie.style.backgroundPosition = "-696px 0";
+                                zombie.style.left=valor+"px";
+                                valor+=15
+                                setTimeout(() => {
+                                    zombie.style.backgroundPosition = "-792px  0";
+                                    zombie.style.left=valor+"px";
+                                    valor+=15
+                                    setTimeout(() => {
+                                        zombie.style.backgroundPosition = "-884px  0";
+                                        zombie.style.left=valor+"px";
+                                        valor+=15
+                                        setTimeout(() => {  
+                                            repeticiones++;
+                                            // Repetir la animación hasta que lleguemos a 20
+                                            
+                                            if (repeticiones < 10) {
+                                                correr(zombie);
+                                            }else{
+                                                zombie.style.backgroundPosition = "-120px 0";
+                                                setTimeout(() => {  
+                                                    morir(zombie)
+                                                }, 300);
+                                            }
+                                        }, 100);
+                                    }, 100);
+                                }, 100);
+                            }, 100);
+                        }, 100);
+                    }, 100);
+                }, 100);
+            }, 100);
+        }, 100);
+    }
+    function morir(zombie) {
+        zombie.style.background="url(./zombie/pix/WildZombie/Dead.png)"
+        setTimeout(() => {
+            zombie.style.backgroundPosition = "-216px 0";
+            zombie.style.left=valor+"px";
+            valor+=10
+            setTimeout(() => {
+                zombie.style.backgroundPosition = "-312px 0";
+                zombie.style.left=valor+"px";
+                valor+=10
+                setTimeout(() => {
+                    zombie.style.backgroundPosition = "-405px 0";
+                    zombie.style.left=valor+"px";
+                    valor+=10
+                    setTimeout(() => {
+                        zombie.style.backgroundPosition = "-405px 0";
+                        zombie.style.left=valor+"px";
+                        valor+=10
+                    }, 200);       
+                        
+                }, 200);
+            }, 200);
+        }, 200);
+    
+    }
+
+    // Iniciar la animación
+    animacion(soldado);
+    
+    setTimeout(() => {
+        apa.style.display="block"
+        repeticiones=0
+        apa.style.animation = "aparecer 15000ms linear forwards";
+        zombieComer(zombie);             
+    }, 7500);  
+    
+    
+    
+    </script>
+</body>
+</html>

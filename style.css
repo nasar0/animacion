@@ -1,0 +1,76 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background: #6D6675;
+}
+@keyframes mover {
+    0%{
+        background-position-x:100%;
+    }
+    100%{
+        background-position-x:0%;
+    }
+}
+@keyframes aparecer {
+    0%{
+        left: -100px;
+    }
+    100%{
+        left:100px;
+    }
+}
+
+section{
+    width:100%;
+    background:url(pixelcut-export.jpeg);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    animation: mover 14170ms linear forwards;
+}
+#soldado{
+    width: 130px;
+    height: 128px;
+    scale: 1.5;
+    top: 276px; 
+    left: 1700px ; 
+    position: absolute;
+    background:url(./soldados/pix/Soldier_1/Idle.png);
+    transform: scaleX(-1);
+    background-position-x:-128px;
+    background-repeat: no-repeat;
+}
+#apa{
+    display: none;
+}
+#zombie{
+    /* display: none; */
+    width: 92px;
+    height: 96px;
+    left: 100px;
+    scale: 1.5;
+    top: 308px;
+    position: absolute;
+    background: url(./zombie/pix/WildZombie/Eating.png);
+    background-position-x: -120px;
+    background-repeat: no-repeat;
+    
+}
+#zombie2{
+    /* display: none; */
+    width: 128px;
+    height: 128px;
+    left: 100px;
+    scale: 1.5;
+    top: 268px;
+    position: absolute;
+    background: url(./soldados/pix/Soldier_1/Dead.png);
+    /* animation: aparecer 1s linear forwards; */
+    background-position-x: -384px;
+    background-repeat: no-repeat;
+}
+
