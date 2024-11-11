@@ -46,7 +46,7 @@ section{
 }
 #apa{
     display: none;
-}
+} 
 #zombie{
     /* display: none; */
     width: 92px;
@@ -58,6 +58,7 @@ section{
     background: url(./zombie/pix/WildZombie/Eating.png);
     background-position-x: -120px;
     background-repeat: no-repeat;
+    animation: aparecer 7500ms linear forwards; 
     
 }
 #zombie2{
@@ -69,7 +70,7 @@ section{
     top: 268px;
     position: absolute;
     background: url(./soldados/pix/Soldier_1/Dead.png);
-    /* animation: aparecer 1s linear forwards; */
+    animation: aparecer 7500ms linear forwards; 
     background-position-x: -384px;
     background-repeat: no-repeat;
 }
