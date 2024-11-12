@@ -12,15 +12,7 @@ body{
     100%{
         background-position-x:0%;
     }
-}
-@keyframes aparecer {
-    0%{
-        left: -100px;
-    }
-    100%{
-        left:100px;
-    }
-}
+} 
 
 section{
     width:100%;
@@ -58,8 +50,6 @@ section{
     background: url(./zombie/pix/WildZombie/Eating.png);
     background-position-x: -120px;
     background-repeat: no-repeat;
-    animation: aparecer 7500ms linear forwards; 
-    
 }
 #zombie2{
     /* display: none; */
@@ -70,7 +60,6 @@ section{
     top: 268px;
     position: absolute;
     background: url(./soldados/pix/Soldier_1/Dead.png);
-    animation: aparecer 7500ms linear forwards; 
     background-position-x: -384px;
     background-repeat: no-repeat;
 }
